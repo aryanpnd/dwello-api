@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwello API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #d63384;
+        }
+        .endpoint {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dwello API Documentation</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Base URL</h2>
+            <pre><code>http://localhost:8080/api</code></pre>
+        </section>
+        <section>
+            <h2>User Routes</h2>
+            <h3>Register or Login User</h3>
+            <p><span class="endpoint">POST</span> <code>/users/register</code></p>
+            <pre><code>{
+  "email": "user@example.com",
+  "name": "John Doe",
+  "profile_pic": "https://example.com/profile.jpg",
+  "location": "New York",
+  "preferred_location": "Manhattan"
+}</code></pre>
+            <p>Responses:</p>
+            <ul>
+                <li><strong>201 Created:</strong> User successfully registered.</li>
+                <li><strong>200 OK:</strong> User already exists, returns the existing user.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Get User by Email</h3>
+            <p><span class="endpoint">GET</span> <code>/users/:email</code></p>
+            <p>Responses:</p>
+            <ul>
+                <li><strong>200 OK:</strong> Returns user details.</li>
+                <li><strong>404 Not Found:</strong> User not found.</li>
+            </ul>
+        </section>
+        <!-- Add more sections for other routes -->
+    </main>
+</body>
+</html>
